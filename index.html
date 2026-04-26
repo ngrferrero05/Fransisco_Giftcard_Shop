@@ -1,0 +1,297 @@
+ html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fransisco Giftcard Shop</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+
+      font-family: 'Poppins', sans-serif;
+
+      margin: 0;
+
+      background: #0b172c; /* Navy Blue Background */
+
+      color: white;
+
+    }
+
+    header {
+
+      background: #000000; /* Black Header */
+
+      padding: 20px;
+
+      text-align: center;
+
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      font-weight: 600;
+
+    }
+
+    .container {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 20px;
+
+    }
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 20px;
+
+    }
+
+    .card {
+
+      background: #1a1a1a; /* Dark Black Cards */
+
+      border-radius: 15px;
+
+      padding: 20px;
+
+      text-align: center;
+
+      transition: transform 0.3s;
+
+    }
+
+    .card:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+
+    }
+
+    .price {
+
+      font-size: 22px;
+
+      margin: 15px 0;
+
+      font-weight: 600;
+
+    }
+
+    button {
+
+      background: #0ea5e9; /* Navy Blue Buttons */
+
+      border: none;
+
+      padding: 12px 20px;
+
+      color: white;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      font-weight: 500;
+
+      transition: background 0.3s;
+
+    }
+
+    button:hover {
+
+      background: #0284c7; /* Slightly darker hover */
+
+    }
+
+    .checkout {
+
+      background: #1a1a1a; /* Dark Black Checkout Section */
+
+      padding: 30px;
+
+      border-radius: 15px;
+
+      margin-top: 40px;
+
+    }
+
+    input, textarea {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin-top: 15px;
+
+      border-radius: 8px;
+
+      border: none;
+
+      background: #0b172c; /* Navy Blue Input Background */
+
+      color: white;
+
+    }
+
+    textarea {
+
+      height: 120px;
+
+    }
+
+    .total {
+
+      font-size: 20px;
+
+      margin-top: 20px;
+
+      font-weight: 600;
+
+    }
+
+    .footer {
+
+      text-align: center;
+
+      margin-top: 50px;
+
+      opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎁 Fransisco Giftcard Shop</h1>
+  <p>Instant Delivery • Pay via Sentoo</p>
+</header>
+
+<div class="container">
+
+<!-- PLAYSTATION -->
+
+   <h2>🎮 US PlayStation Cards</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>PSN $10</h3>
+      <div class="price">XCG 23,50</div>
+      <button onclick="buy('PSN $10',18)">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h3>PSN $25</h3>
+      <div class="price">XCG 53,50</div>
+      <button onclick="buy('PSN $25',45)">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h3>PSN $50</h3>
+      <div class="price">XCG 101,50</div>
+      <button onclick="buy('PSN $50',90)">Buy Now</button>
+    </div>
+
+  <div class="card">
+      <h3>PSN $100</h3>
+      <div class="price">XCG 193,50</div>
+      <button onclick="buy('PSN $50',90)">Buy Now</button>
+    </div>
+  
+  <h2>🍎 US iTunes Cards</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>iTunes $5</h3>
+      <div class="price">XCG 14,-</div>
+      <button onclick="buy('iTunes $10',18)">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h3>iTunes $10</h3>
+      <div class="price">XCG 23,-</div>
+      <button onclick="buy('iTunes $25',45)">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h3>iTunes $25</h3>
+      <div class="price">XCG 54,-</div>
+      <button onclick="buy('iTunes $50',90)">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h3>iTunes $50</h3>
+      <div class="price">XCG 106,-</div>
+      <button onclick="buy('iTunes $50',90)">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h3>iTunes $100</h3>
+      <div class="price">XCG 208,-</div>
+      <button onclick="buy('iTunes $50',90)">Buy Now</button>
+    </div>
+
+</div>
+
+<!-- CHECKOUT -->
+<div class="-checkout-box">
+  <h2>Checkout</h2>
+
+  <input id="name" placeholder="Your Name">
+  <input id="phone" placeholder="WhatsApp Number">
+</div>
+
+<div class="footer">
+  © 2026 Fransisco Giftcard Shop
+</div>
+
+</div>
+
+<script>
+function buy(product, price) {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+
+  if (!name || !phone) {
+    alert("Fill your name and WhatsApp first");
+    return;
+  }
+
+  let message = `🛒 ORDER - Fransisco Giftcard Shop
+
+Product: ${product}
+Price: ƒ${price}
+
+Name: ${name}
+Phone: ${phone}
+
+Payment: Sentoo`;
+
+  let whatsapp = "https://wa.me/59995247348?text=" + encodeURIComponent(message);
+  window.open(whatsapp, "_blank");
+}
+
+function fav(item) {
+  alert(item + " added to favorites ❤️");
+}
+</script>
+
+</body>
+</html>
